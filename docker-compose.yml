@@ -1,0 +1,15 @@
+
+services:
+  db:
+    image: postgres:18
+    container_name: astro-quizzes-db
+    environment:
+      POSTGRES_USER: astro
+      POSTGRES_PASSWORD: astro_password
+      POSTGRES_DB: astro_quizzes
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
